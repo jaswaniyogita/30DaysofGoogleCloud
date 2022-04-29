@@ -1,0 +1,45 @@
+Task 1:
+
+Create a Cloud Storage bucket
+
+In the Cloud Console, click on Navigation menu and then click on Cloud Storage.
+
+Click Create bucket.
+
+In the Create bucket dialog, specify the following attributes:
+
+Name: A unique bucket name. Do not include sensitive information in the bucket name, as the bucket namespace is global and publicly visible.
+
+Location type: Region
+
+Location: us-central1
+
+A location where bucket data will be stored.
+
+Click Create.
+
+Task 2:
+
+docker run -it -e DEVSHELL_PROJECT_ID=$DEVSHELL_PROJECT_ID python:3.7 /bin/bash
+
+pip install apache-beam[gcp]
+
+python -m apache_beam.examples.wordcount --output OUTPUT_FILE
+
+BUCKET=gs://<bucket name provided earlier>
+
+python -m apache_beam.examples.wordcount --project $DEVSHELL_PROJECT_ID \
+  --runner DataflowRunner \
+  --staging_location $BUCKET/staging \
+  --temp_location $BUCKET/temp \
+  --output $BUCKET/results/output \
+  --region us-central1
+
+Task 3 :
+
+Open the navigation menu and select Dataflow from the list of services.You should see your wordcount job with a status of Running at first.
+
+The process is complete when the status is Succeeded:
+
+
+
