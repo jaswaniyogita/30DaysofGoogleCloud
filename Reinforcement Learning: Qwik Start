@@ -1,0 +1,13 @@
+Task 1:
+
+From the left-hand navigation menu, select AI Platform > Notebooks. Then from the top-hand menu, select + New Notebook > TensorFlow 2.x > Without GPUs, Then click Create. 
+
+It will take a couple of minutes to provision your AI Platform Notebook. Refresh the page occasionally. Once the notebook has been built, click the OPEN JUPYTERLAB button.
+
+Task 2:
+
+Click on the Terminal icon.
+
+git clone https://github.com/GoogleCloudPlatform/training-data-analyst.git
+
+Wait for this command to propagate. Then from the left-hand menu, select training-data-analyst> quests> rl > early_rl > early_rl.ipynb
