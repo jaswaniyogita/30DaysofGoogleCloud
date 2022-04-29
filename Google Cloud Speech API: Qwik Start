@@ -1,0 +1,31 @@
+Task 1 :
+
+To create an API key, click Navigation menu > APIs & services > Credentials:
+Then click Create credentials:
+In the drop down menu, select API key:
+Copy the key you just generated and click Close.
+Open the Navigation menu and select Compute Engine. You should see the following provisioned linux instance:
+Click on the SSH button.
+Remain in this SSH session for the rest of the lab.
+export API_KEY=<YOUR_API_KEY>
+
+Task 2:
+touch request.json
+nano request.json
+{
+  "config": {
+      "encoding":"FLAC",
+      "languageCode": "en-US"
+  },
+  "audio": {
+      "uri":"gs://cloud-samples-tests/speech/brooklyn.flac"
+  }
+}
+
+Press control + x and then y to save and close the request.json file.
+
+curl -s -X POST -H "Content-Type: application/json" --data-binary @request.json \
+"https://speech.googleapis.com/v1/speech:recognize?key=${API_KEY}"
+
+curl -s -X POST -H "Content-Type: application/json" --data-binary @request.json \
+"https://speech.googleapis.com/v1/speech:recognize?key=${API_KEY}" > result.json
