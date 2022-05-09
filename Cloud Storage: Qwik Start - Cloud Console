@@ -1,0 +1,31 @@
+Task 1:
+
+-In the Cloud Console, go to Navigation menu > Cloud Storage > Browser.
+
+-Click Create Bucket
+
+Task 2:
+
+-Right-click on the image above and download it to your computer. Save the image as kitten.png, renaming it on download.
+
+-In the Cloud Storage browser page, click the name of the bucket that you created.
+
+-In the Objects tab, click Upload files.
+
+-In the file dialog, go to the file that you downloaded and select it.
+
+-Ensure the file is named kitten.png. If it is not, click the three dot icon for your file, select Rename from the dropdown, and rename the file to kitten.png.
+
+Task 3:
+
+-Click the Permissions tab above the list of files.
+
+-Ensure the view is set to Principals. Click Add to view the Add principals pane.
+
+-In the New principals box, enter allUsers.
+
+-In the Select a role drop-down, select Cloud Storage > Storage Object Viewer.
+
+-Click Save.
+
+-In the Are you sure you want to make this resource public? window, click Allow public access.
