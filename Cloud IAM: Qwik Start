@@ -1,0 +1,31 @@
+Task 1:
+
+-In the Cloud Console, go to Navigation menu > Cloud Storage > Browser.
+
+-Click Create Bucket
+
+-On the Bucket Details page click UPLOAD FILES button.
+
+-Browse your computer to find a file to use. Any text or html file will do.
+
+-Click on the three dots at the end of the line containing the file and click Rename.
+
+-Rename the file ‘sample.txt'.
+
+-Click RENAME.
+
+Task 2:
+
+-Select Navigation menu > IAM & Admin > IAM. Then click the pencil icon next to Username 2.
+
+-Remove Project Viewer access for Username 2 by clicking the trashcan icon next to the role name. Then click SAVE.
+
+Task 3:
+
+-In the Console, select Navigation menu > IAM & Admin > IAM.
+
+-Click + ADD button and paste the Username 2 name into the New principals field.
+
+-In the Select a role field, select Cloud Storage > Storage Object Viewer from the drop-down menu.
+
+-Click SAVE.
