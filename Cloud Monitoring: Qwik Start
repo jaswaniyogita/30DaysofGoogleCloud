@@ -1,0 +1,58 @@
+Task 1:
+
+-In the Cloud Console dashboard, go to Navigation menu > Compute Engine > VM instances, then click Create instance.
+- Fill in the fields as follows, leaving all other fields at the default value:
+
+Name->lamp-1-vm
+Region->us-central1 (Iowa)
+Zone->us-central1-a
+Series->N1
+Machine type->n1-standard-2
+Boot disk->Click Change. Select version Debian GNU/Linux 10 (buster) for Debian OS and click Select.
+Firewall->check Allow HTTP traffic
+
+-Click Create.
+
+
+Task 2:
+
+-In the Console, click SSH to open a terminal to your instance.
+-Click Connect.
+-Type folloing commands :
+
+sudo apt-get update
+sudo apt-get install apache2 php7.0
+When asked if you want to continue, enter Y.
+sudo service apache2 restart
+
+
+Task 3:
+
+curl -sSO https://dl.google.com/cloudagents/add-monitoring-agent-repo.sh
+sudo bash add-monitoring-agent-repo.sh
+sudo apt-get update
+sudo apt-get install stackdriver-agent
+When asked if you want to continue, enter Y.
+curl -sSO https://dl.google.com/cloudagents/add-logging-agent-repo.sh
+sudo bash add-logging-agent-repo.sh
+sudo apt-get updatesudo apt-get install google-fluentd
+
+
+Task 4:
+
+-In the Cloud Console, in the left menu, click Uptime checks, and then click Create Uptime Check.
+-Set the following fields:
+Title: Lamp Uptime Check, then click Next.
+
+Protocol: HTTP
+
+Resource Type: Instance
+
+Applies to: Single, lamp-1-vm
+
+Path: leave at default
+
+Check Frequency: 1 min
+
+-Click on Next to leave the other details to default and click Test to verify that your uptime check can connect to the resource.
+-When you see a green check mark everything can connect. Click Create.
